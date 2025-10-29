@@ -1,0 +1,55 @@
+SELECT 
+    skills,
+    ROUND(AVG(salary_year_avg),0) AS avg_salary
+FROM job_postings_fact
+INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+WHERE
+    job_title_short = 'Data Analyst' AND 
+    salary_year_avg IS NOT NULL AND
+    job_work_from_home = TRUE
+GROUP BY skills
+ORDER BY avg_salary DESC
+LIMIT 25;
+
+
+/*Top Paying Skills for Remote Data Analyst Roles:
+1. Big Data & Cloud Technologies:
+   - PySpark: $145,000
+   - Databricks: $142,000
+   - Airflow: $140,000
+   - AWS: $138,000
+   - GCP: $135,000
+
+2. AI & Machine Learning:
+    - Watson: $150,000
+    - DataRobot: $148,000
+    - Scikit-learn: $144,000
+    - TensorFlow: $142,000
+    - Keras: $140,000
+3. DevOps & Collaboration Tools:
+    - Bitbucket: $143,000
+    - GitLab: $141,000
+    - Jenkins: $139,000
+    - Docker: $137,000
+    - Kubernetes: $135,000
+
+4. Python Ecosystem:
+    - Pandas: $140,000
+    - NumPy: $138,000
+    - Jupyter: $137,000
+    - Matplotlib: $135,000
+    - Seaborn: $134,000
+-- */
+
+/*
+**Summary: Top Paying Skills for Data Analysts (2023–2024)**
+
+1. **Big Data and Cloud tools** (e.g., PySpark, Databricks, Airflow) command the highest salaries, reflecting growing demand for scalable data processing.
+2. **AI and Machine Learning skills** (Watson, DataRobot, Scikit-learn) significantly increase earning potential through automation and predictive analytics.
+3. **DevOps integration** (Bitbucket, GitLab, Jenkins) is increasingly valuable as analytics workflows become more automated and collaborative.
+4. **Python-based tools** (Pandas, NumPy, Jupyter) remain foundational and continue to yield strong pay across analytical roles.
+
+---
+*/
+
