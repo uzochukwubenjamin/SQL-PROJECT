@@ -13,6 +13,7 @@ ORDER BY avg_salary DESC
 LIMIT 25;
 
 
+
 /*Top Paying Skills for Remote Data Analyst Roles:
 1. Big Data & Cloud Technologies:
    - PySpark: $145,000
