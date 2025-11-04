@@ -137,7 +137,7 @@ LIMIT 5;
 ![Salary Per Skill](project_sql/assets/Salary_Per_Skill.png)
 *Bar graph visualizing the top 10 in demand skills for remote data analyst roles.*
 
-![In_Demand_Skills_Table](project_sql\assets\In_Demand_Skills_Table.png)
+![In_Demand_Skills_Table](project_sql/assets/In_Demand_Skills_Table.png)
 
 
 
